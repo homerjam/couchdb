@@ -28,11 +28,11 @@ DepDescs = [
 %% keep these sorted
 {b64url,           "b64url",           "6895652d80f95cdf04efb14625abed868998f174"},
 {couch_log,        "couch-log",        "741d48c94a10469d2e0283acbee7592e82a992ab"},
-{chttpd,           "chttpd",           "3509b91537266e29709789a5f8ccc4f101f4ce54"},
-{couch,            "couch",            "4e7b6265b3be88bed97572b50a412b470bf680d1"},
-{couch_index,      "couch-index",      "e7d269800302224eacf9585f74eb30822495755b"},
-{couch_mrview,     "couch-mrview",     "157132c6e603b1870a08c04e8459a177387932ed"},
-{couch_replicator, "couch-replicator", "05247a26019ce5416e13ef80a12c307bdc790ee4"},
+{chttpd,           "chttpd",           "45918-pluggable-storage-engines"},
+{couch,            "couch",            "45918-pluggable-storage-engines"},
+{couch_index,      "couch-index",      "45918-pluggable-storage-engines"},
+{couch_mrview,     "couch-mrview",     "45918-pluggable-storage-engines"},
+{couch_replicator, "couch-replicator", "45918-pluggable-storage-engines"},
 {couch_plugins,    "couch-plugins",    "3e73b723cb126cfc471b560d17c24a8b5c540085"},
 {couch_event,      "couch-event",      "835a41885d1e276d207758954f8238aa7bba0ae8"},
 {couch_stats,      "couch-stats",      "7895d4d3f509ed24f09b6d1a0bd0e06af34551dc"},
@@ -41,7 +41,7 @@ DepDescs = [
 {docs,             "documentation",    "eab768d17ca0b9d20f4fc884a48376c9533356c1", [raw]},
 {ddoc_cache,       "ddoc-cache",       "c762e90a33ce3cda19ef142dd1120f1087ecd876"},
 {ets_lru,          "ets-lru",          "c05488c8b1d7ec1c3554a828e0c9bf2888932ed6"},
-{fabric,           "fabric",           "ebea1b8f5d49fe60f326b33dbdc06176ecfea5d1"},
+{fabric,           "fabric",           "45918-pluggable-storage-engines"},
 {fauxton,          "fauxton",          {tag, "v1.1.5"}, [raw]},
 {folsom,           "folsom",           "a5c95dec18227c977029fbd3b638966d98f17003"},
 {global_changes,   "global-changes",   "203fb088ed81149108e64d18ffd9c3f5df154f97"},
@@ -50,7 +50,7 @@ DepDescs = [
 {jiffy,            "jiffy",            "d3c00e19d8fa20c21758402231247602190988d3"},
 {khash,            "khash",            "7c6a9cd9776b5c6f063ccafedfa984b00877b019"},
 {mango,            "mango",            "01252f971bef0c8da1d78bf5a7b506b71926ce1b"},
-{mem3,             "mem3",             "15615b295ec970ca9b12b7b54107a80b95149511"},
+{mem3,             "mem3",             "45918-pluggable-storage-engines"},
 {mochiweb,         "mochiweb",         "bd6ae7cbb371666a1f68115056f7b30d13765782"},
 {oauth,            "oauth",            "099057a98e41f3aff91e77e3cf496d6c6fd901df"},
 {rexi,             "rexi",             "a327b7dbeb2b0050f7ca9072047bf8ef2d282833"},
@@ -59,7 +59,7 @@ DepDescs = [
 {meck,             "meck",             {tag, "0.8.2"}}
 ],
 
-BaseUrl = "https://git-wip-us.apache.org/repos/asf/",
+BaseUrl = "https://github.com/cloudant/",
 
 MakeDep = fun
     ({AppName, {url, Url}, Version}) ->
