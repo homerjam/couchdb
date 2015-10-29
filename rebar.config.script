@@ -60,7 +60,9 @@ DepDescs = [
 {setup,            "setup",            "b9e1f3b5d5a78a706abb358e17130fb7344567d2"},
 {meck,             "meck",             {tag, "0.8.2"}},
 {nifile,           "nifile",           "master"},
-{couch_ngen,       "couch_ngen",       "master"}
+{couch_ngen,       "couch_ngen",       "master"},
+{eleveldb,         "eleveldb",         "cloudant-develop"},
+{couch_ldb_engine, "couch_ldb_engine", "master"}
 ],
 
 BaseUrl = "https://github.com/cloudant/",
@@ -70,7 +72,11 @@ MakeDep = fun
         {AppName, ".*", {git, Url, Version}};
     ({AppName, {url, Url}, Version, Options}) ->
         {AppName, ".*", {git, Url, Version}, Options};
-    ({AppName, RepoName, Version}) when AppName == couch_ngen; AppName == nifile ->
+    ({AppName, RepoName, Version}) when
+            AppName == couch_ngen;
+            AppName == nifile;
+            AppName == eleveldb;
+            AppName == couch_ldb_engine ->
         Url = BaseUrl ++ RepoName ++ ".git",
         {AppName, ".*", {git, Url, Version}};
     ({AppName, RepoName, Version}) ->
