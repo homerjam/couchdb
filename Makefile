@@ -35,6 +35,10 @@ DIALYZE_OPTS=$(shell echo "\
 	apps=$(apps) \
 	skip_deps=$(skip_deps) \
 	" | sed -e 's/[a-z]\+= / /g')
+XREF_OPTS=$(shell echo "\
+	apps=$(apps) \
+	skip_deps=$(skip_deps) \
+	" | sed -e 's/[a-z]\+= / /g')
 
 
 ################################################################################
@@ -175,6 +179,11 @@ check-plt:
 # target: dialyze - Analyze the code for discrepancies
 dialyze: .rebar
 	@$(REBAR) -r dialyze $(DIALYZE_OPTS)
+
+
+.PHONY: xref
+xref:
+	@$(REBAR) -r xref skip_apps=meck,ibrowse
 
 
 .PHONY: docker-image
