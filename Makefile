@@ -30,15 +30,15 @@ EUNIT_OPTS=$(shell echo "\
 	skip_deps=$(skip_deps) \
 	suites=$(suites) \
 	tests=$(tests) \
-	" | sed -e 's/[a-z]\+= / /g')
+	" | sed -e 's/[a-z][a-z]*= / /g')
 DIALYZE_OPTS=$(shell echo "\
 	apps=$(apps) \
 	skip_deps=$(skip_deps) \
-	" | sed -e 's/[a-z]\+= / /g')
+	" | sed -e 's/[a-z][a-z]*= / /g')
 XREF_OPTS=$(shell echo "\
 	apps=$(apps) \
 	skip_deps=$(skip_deps) \
-	" | sed -e 's/[a-z]\+= / /g')
+	" | sed -e 's/[a-z][a-z]*= / /g')
 
 
 ################################################################################
