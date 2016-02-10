@@ -66,6 +66,9 @@ MakeDep = fun
         {AppName, ".*", {git, Url, Version}};
     ({AppName, {url, Url}, Version, Options}) ->
         {AppName, ".*", {git, Url, Version}, Options};
+    ({AppName, RepoName, Version}) when AppName == meck ->
+        MeckUrl = "https://git-wip-us.apache.org/repos/asf/couchdb-meck.git",
+        {AppName, ".*", {git, MeckUrl, Version}};
     ({AppName, RepoName, Version}) ->
         Url = BaseUrl ++ "couchdb-" ++ RepoName ++ ".git",
         {AppName, ".*", {git, Url, Version}};
