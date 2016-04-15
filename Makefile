@@ -90,6 +90,7 @@ fauxton: share/www
 # target: check - Test everything
 check: all
 	@$(MAKE) eunit
+	@$(MAKE) ct
 	@$(MAKE) javascript
 	@$(MAKE) build-test
 
@@ -101,6 +102,10 @@ eunit: export ERL_AFLAGS = -config $(shell pwd)/rel/files/eunit.config
 eunit: couch
 	@$(REBAR) setup_eunit 2> /dev/null
 	@$(REBAR) -r eunit $(EUNIT_OPTS)
+
+.PHONY: ct
+ct: couch
+	@$(REBAR) -r ct
 
 
 .PHONY: javascript
