@@ -15,4 +15,7 @@
 {template, "rel/overlay/etc/default.ini", "tmp/etc/default_eunit.ini"}.
 {template, "rel/overlay/etc/local.ini", "tmp/etc/local_eunit.ini"}.
 {template, "rel/files/eunit.ini", "tmp/etc/eunit.ini"}.
+{template, "rel/files/db1.ini", "tmp/etc/db1.ini"}.
+{template, "rel/files/db2.ini", "tmp/etc/db2.ini"}.
+{template, "rel/files/db3.ini", "tmp/etc/db3.ini"}.
 {template, "rel/overlay/etc/vm.args", "tmp/etc/vm.args"}.

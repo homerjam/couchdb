@@ -13,6 +13,7 @@
 include version.mk
 
 REBAR?=$(shell echo `pwd`/bin/rebar)
+EPMD?=$(shell which epmd)
 IN_RELEASE = $(shell if [ ! -d .git ]; then echo true; fi)
 COUCHDB_VERSION_SUFFIX = $(shell if [ -d .git ]; then echo '-`git rev-parse --short --verify HEAD`'; fi)
 COUCHDB_VERSION = $(vsn_major).$(vsn_minor).$(vsn_patch)$(COUCHDB_VERSION_SUFFIX)
@@ -99,6 +100,7 @@ check: all
 eunit: export BUILDDIR = $(shell pwd)
 eunit: export ERL_AFLAGS = -config $(shell pwd)/rel/files/eunit.config
 eunit: couch
+	@$(EPMD) -daemon
 	@$(REBAR) setup_eunit 2> /dev/null
 	@$(REBAR) -r eunit $(EUNIT_OPTS)
 
